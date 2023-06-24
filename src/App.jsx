@@ -23,36 +23,32 @@ function App() {
 }
 
 const Bill = () => {
-    const [bill, setBill] = useState(null);
+
+    const [bill, setBill] = useState(0);
 
     const newBill = (e) => {
         e.preventDefault();
-        setBill(e.target.value);
+        setBill(Number(e.target.value))
+        console.log(setBill(Number(e.target.value)));
     }
 
     return (
         <section>
             <p>How much was the bill?</p>
-            <input onChange={newBill} value={bill} className='amount' type="number" placeholder='Amount...' />
+            <input value={bill} onChange={newBill} min={0} max={BigInt} className='amount' type="number" placeholder='Amount...' />
         </section>
     )
 }
 
 const Percentage = ({ children }) => {
-    const [percentage, setPercentage] = useState(5);
-
-    const newPercentage = (e) => {
-        e.preventDefault();
-        setPercentage(e.target.value);
-    }
 
     return (
         <section>
             <p>{children}</p>
             <select type="text">
-                <option onChange={newPercentage} value={percentage}>It was ok({percentage}%)</option>
-                <option onChange={newPercentage} value={percentage * 2}>It was very good({percentage * 2}%)</option>
-                <option onChange={newPercentage} value={percentage * 4}>Absolutely Amazing({percentage * 4}%)</option>
+                <option>It was ok(5%)</option>
+                <option>It was very good(10%)</option>
+                <option>Absolutely Amazing(20%)</option>
             </select>
         </section>
     )
