@@ -9,6 +9,7 @@ This is a simple tip calculator application designed to quickly and accurately c
 <li>
   Easy Bill Entry: Enter the total bill amount with ease using the intuitive and user-friendly interface.
 </li>
+<br>
 
 <li>
   Adjustable Tip Percentage: Customize the tip percentage according to your desired level of generosity or service experience.
@@ -17,22 +18,27 @@ This is a simple tip calculator application designed to quickly and accurately c
 <li>
   Splitting the Bill: If you're sharing the bill with others, simply specify the number of people, and the app will calculate the individual share, including the tip.
 </li>
+<br>
 
 <li>
   Real-Time Calculations: As you adjust the tip percentage or the number of people, the app instantly recalculates and updates the total amount, tip amount, and individual shares.
 </li>
+<br>
 
 <li>
   Rounding Options: Choose between rounding up or down to the nearest dollar, making it easier to handle cash payments.
 </li>
+<br>
 
 <li>
   Multi-Currency Support: Calculate tips in your local currency or switch to a different currency if you're traveling abroad.
 </li>
+<br>
 
 <li>
   Save and Share: Save your calculations for future reference or share them with friends via messaging apps or social media platforms.
 </li>
+<br>
 
 </ul>
 
