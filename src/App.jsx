@@ -2,11 +2,12 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+    const [bill, setBill] = useState(0);
 
     return (
         <>
             <main>
-                <Bill />
+                <Bill bill={bill} onSetBill={setBill} />
                 <Percentage>
                     <p>How did you like the service?</p>
                 </Percentage>
@@ -15,21 +16,20 @@ function App() {
                     <p>How did your friend like the service?</p>
                 </Percentage>
 
-                <Output />
-                <Reset />
+                <Output bill={bill} />
+                <Reset setBill={setBill} />
             </main>
         </>
     )
 }
 
-const Bill = () => {
+const Bill = ({ bill, onSetBill }) => {
 
-    const [bill, setBill] = useState(0);
 
     const newBill = (e) => {
         e.preventDefault();
-        setBill(Number(e.target.value))
-        console.log(setBill(Number(e.target.value)));
+        onSetBill(Number(e.target.value))
+        // console.log(setBill(Number(e.target.value)));
     }
 
     return (
@@ -42,29 +42,42 @@ const Bill = () => {
 
 const Percentage = ({ children }) => {
 
+    const [service, setService] = useState(5);
+
+    const newService = (e) => {
+        e.preventDefault();
+        setService(Number(e.target.value));
+        // console.log(setService(Number(e.target.value)));
+    }
+
     return (
         <section>
             <p>{children}</p>
             <select type="text">
-                <option>It was ok(5%)</option>
-                <option>It was very good(10%)</option>
-                <option>Absolutely Amazing(20%)</option>
+                <option value={service} onChange={newService}>It was ok({service}%)</option>
+                <option value={service * 2} onChange={newService}>It was very good({service * 2}%)</option>
+                <option value={service * 4} onChange={newService}>Absolutely Amazing({service * 4}%)</option>
             </select>
         </section>
     )
 }
 
-const Output = () => {
+const Output = ({ bill }) => {
     return (
         <section>
-            <h1>Your pay is 92% (80$ + 12$tip)</h1>
+            <h1 className='total'>Your pay is 92% ({bill}$ + 12$ tip)</h1>
         </section>
     )
 }
 
-const Reset = () => {
+const Reset = ({ setBill }) => {
+
+    const resetAll = () => {
+        setBill(0)
+    }
+
     return (
-        <button>
+        <button onClick={resetAll}>
             Reset
         </button>
     )

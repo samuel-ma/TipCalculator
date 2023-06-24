@@ -26,6 +26,10 @@ main {
     padding: 50px;
 }
 
+.total {
+    font-family: "Poppins";
+}
+
 button,
 select {
     padding: 10px;
