@@ -2,6 +2,8 @@
 
 This is a simple tip calculator application designed to quickly and accurately calculate the tip amount for your bill. Whether you're dining out with friends, grabbing a coffee, or paying for a taxi, this app will help you determine the appropriate tip based on your preferences.
 
+![tipcalc](https://github.com/samuel-ma/TipCalculator/assets/82509653/6e129fd3-ffe7-4dba-90b8-82182a8cb639)
+
 ### Features
 
 <ul>
