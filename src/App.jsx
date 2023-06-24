@@ -3,20 +3,23 @@ import './App.css'
 
 function App() {
     const [bill, setBill] = useState(0);
+    const [percentage1, setPercentage1] = useState(0);
+    const [percentage2, setPercentage2] = useState(0);
+    const tip = bill * (((percentage1 + percentage2) / 2) / 100);
 
     return (
         <>
             <main>
                 <Bill bill={bill} onSetBill={setBill} />
-                <Percentage>
+                <Percentage percentage={percentage1} onSelect={setPercentage1}>
                     <p>How did you like the service?</p>
                 </Percentage>
 
-                <Percentage>
+                <Percentage percentage={percentage2} onSelect={setPercentage2}>
                     <p>How did your friend like the service?</p>
                 </Percentage>
 
-                <Output bill={bill} />
+                <Output bill={bill} tip={tip} />
                 <Reset setBill={setBill} />
             </main>
         </>
@@ -40,32 +43,25 @@ const Bill = ({ bill, onSetBill }) => {
     )
 }
 
-const Percentage = ({ children }) => {
-
-    const [service, setService] = useState(5);
-
-    const newService = (e) => {
-        e.preventDefault();
-        setService(Number(e.target.value));
-        // console.log(setService(Number(e.target.value)));
-    }
+const Percentage = ({ children, percentage, onSelect }) => {
 
     return (
         <section>
             <p>{children}</p>
-            <select type="text">
-                <option value={service} onChange={newService}>It was ok({service}%)</option>
-                <option value={service * 2} onChange={newService}>It was very good({service * 2}%)</option>
-                <option value={service * 4} onChange={newService}>Absolutely Amazing({service * 4}%)</option>
-            </select>
-        </section>
+            <select type="text" value={percentage} onChange={e => onSelect(Number(e.target.value))}>
+                <option value="0">Not good (0%)</option>
+                <option value="5">It was ok (5%)</option>
+                <option value="10">It was very good (10%)</option>
+                <option value="20">Absolutely Amazing (15%)</option>
+            </select >
+        </section >
     )
 }
 
-const Output = ({ bill }) => {
+const Output = ({ bill, tip }) => {
     return (
         <section>
-            <h1 className='total'>Your pay is 92% ({bill}$ + 12$ tip)</h1>
+            <h1 className='total'>Your pay is {bill + tip}$ ({bill}$ + {tip}$ tip)</h1>
         </section>
     )
 }
