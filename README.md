@@ -43,12 +43,17 @@ This is a simple tip calculator application designed to quickly and accurately c
 </ul>
 
 ### Getting Started
-Clone this repository to your local machine or download the source code as a ZIP file.
-Open the app on your device or compile it from the source code.
-Enter the bill amount, adjust the tip percentage, and specify the number of people if necessary.
-View the calculated tip amount, total bill including the tip, and individual shares (if applicable).
-Adjust any parameters as needed and observe the real-time updates.
-Save or share the calculation results for your convenience.
+<p>Clone this repository to your local machine or download the source code as a ZIP file.</p>
+
+<p>Open the app on your device or compile it from the source code.</p>
+
+<p>Enter the bill amount, adjust the tip percentage, and specify the number of people if necessary.</p>
+
+<p>View the calculated tip amount, total bill including the tip, and individual shares (if applicable).</p>
+
+<p>Adjust any parameters as needed and observe the real-time updates.</p>
+
+<p>Save or share the calculation results for your convenience.</p>
 
 ### Contributing
 If you'd like to contribute to the development of this app, feel free to submit bug reports, feature requests, or pull requests. Please ensure that you follow the established coding conventions and provide detailed information about your proposed changes.
