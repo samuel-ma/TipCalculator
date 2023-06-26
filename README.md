@@ -65,3 +65,4 @@ This app is released under the MIT License. You are free to use, modify, and dis
 
 ### Acknowledgments
 We would like to thank the open-source community for their valuable contributions and the developers of the libraries and frameworks used in this application. Their efforts have made this tip calculator app possible.
+
