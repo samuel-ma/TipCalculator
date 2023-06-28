@@ -80,3 +80,4 @@ const Reset = ({ setBill }) => {
 }
 
 export default App
+
